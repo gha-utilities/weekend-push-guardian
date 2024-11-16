@@ -1,0 +1,30 @@
+name: 'Weekend Push Guardian'
+description: 'Reject push to protected branch on Friday or Weekend days'
+
+
+inputs:
+  ## Required Inputs
+  # _name_:
+  #   description: ''
+  #   required: true
+
+  ## Optional Inputs
+  git_protected_branches:
+    description: 'Comma separated list of branch names to protect from pushing'
+    default: 'main,master'
+    required: false
+
+
+outputs:
+  passed:
+    description: 'Set to `"false"` if Friday/Weekend-day push was detected, or `"true"` if not'
+
+
+runs:
+  using: 'node20'
+  main: 'main.js'
+
+
+branding:
+  icon: layout
+  color: black

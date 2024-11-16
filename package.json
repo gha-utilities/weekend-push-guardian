@@ -1,0 +1,24 @@
+{
+  "name": "weekend-push-guardian",
+  "version": "0.0.1",
+  "description": "Block client-side `git push` to `GIT_PROTECTED_BRANCHES` listed branches on Friday or weekend days",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gha-utilities/weekend-push-guardian.git"
+  },
+  "keywords": [
+    "git",
+    "hook",
+    "git-hook",
+    "github",
+    "action",
+    "github-action"
+  ],
+  "author": "S0AndS0",
+  "license": "AGPL-3.0"
+}

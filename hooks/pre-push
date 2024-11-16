@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+##
+# Description: Block client-side `git push` to `GIT_PROTECTED_BRANCHES` listed branches on Friday or weekend days
+# Author: S0AndS0
+# License: AGPL-3.0
+##
+
+GIT_PROTECTED_BRANCHES="${GIT_PROTECTED_BRANCHES:-main,master}"
+
+if (( $(date +%u) >= 5 )); then
+	GIT_BRANCH="${GIT_BRANCH:-$(git branch --show-current)}"
+	if ! [[ "${GIT_BRANCH}" =~ ^(${GIT_PROTECTED_BRANCHES//,/|})$ ]]; then
+		exit 0;
+	fi
+	printf >&2 'Rejected: push on Friday or weekend days\n';
+	exit 1;
+fi
+
