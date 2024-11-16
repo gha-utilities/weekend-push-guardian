@@ -64,6 +64,8 @@ Reference the code of this repository within your own `workflow`...
 
 
 ```YAML
+name: Weekend Push Guardian
+
 on:
   push:
 
@@ -71,6 +73,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    steps:
       - name: Checkout source branch for building Pages
         uses: actions/checkout@v4
         with:
@@ -78,12 +81,19 @@ jobs:
 
       - name: Weekend Push Guardian
         id: weekend-push-guardian
-        with: gha-utilities/weekend-push-guardian@v0.0.1
-          message: Updates Git Submodules
-          options: '--depth 10 --init --merge --recursive --remote'
+        uses: gha-utilities/weekend-push-guardian@v0.0.1
+        with:
+          git_protected_branches: 'main,master'
 
-      # - name: Do things on weekdays
-      #   if: outputs.weekend-push-guardian.passed && success()
+      - name: Enjoy your weekend
+        if: steps.weekend-push-guardian.outputs.passed != 'true'
+        run: |
+          echo "Go touch grass!"
+
+      - name: Get stuff done on weekdays
+        if: steps.weekend-push-guardian.outputs.passed && success()
+        run: |
+          echo "Do things on weekdays"
 ```
 
 
