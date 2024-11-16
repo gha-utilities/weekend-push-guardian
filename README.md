@@ -6,7 +6,7 @@
 
 Block client-side `git push` to `INPUT_GIT_PROTECTED_BRANCHES` listed branches on Friday or weekend days
 
-## [![Byte size of Weekend Push Guardian][badge__main__weekend_push_guardian__source_code]][weekend_push_guardian__main__source_code] [![Open Issues][badge__issues__weekend_push_guardian]][issues__weekend_push_guardian] [![Open Pull Requests][badge__pull_requests__weekend_push_guardian]][pull_requests__weekend_push_guardian] [![Latest commits][badge__commits__weekend_push_guardian__main]][commits__weekend_push_guardian__main]   [![GitHub Actions Build Status][badge__github_actions]][activity_log__github_actions] [![License][badge__license]][branch__current__license]
+## [![Byte size of Weekend Push Guardian][badge__main__weekend_push_guardian__source_code]][weekend_push_guardian__main__source_code] [![Open Issues][badge__issues__weekend_push_guardian]][issues__weekend_push_guardian] [![Open Pull Requests][badge__pull_requests__weekend_push_guardian]][pull_requests__weekend_push_guardian] [![Latest commits][badge__commits__weekend_push_guardian__main]][commits__weekend_push_guardian__main] [![License][badge__license]][branch__current__license]
 
 
 ---
