@@ -1,0 +1,31 @@
+name: Weekend Push Guardian
+
+on:
+  push:
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source branch for building Pages
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 10
+
+      - name: Weekend Push Guardian
+        id: weekend-push-guardian
+        uses: gha-utilities/weekend-push-guardian@v0.0.1
+        with:
+          git_protected_branches: 'main,master'
+
+      - name: Enjoy your weekend
+        if: steps.weekend-push-guardian.outputs.passed != 'true'
+        run: |
+          echo "Go touch grass!"
+
+      - name: Get stuff done on weekdays
+        if: steps.weekend-push-guardian.outputs.passed && success()
+        run: |
+          echo "Do things on weekdays"
+
